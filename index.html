@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&D Asesoría Integral | Estudio Contable y Tecnológico</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de Colores basada en el Logo A&D -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            electric: '#0091FF',  /* Azul brillante del logo */
+                            navy: '#111E38',      /* Azul oscuro/marino del logo */
+                            navyLight: '#1E2C4A',
+                            softBg: '#F8FAFC',
+                            slateGray: '#64748B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-grid-subtle {
+            background-image: radial-gradient(#0091FF 0.65px, transparent 0.65px);
+            background-size: 28px 28px;
+            opacity: 0.07;
+        }
+        .blue-glow {
+            box-shadow: 0 0 45px -10px rgba(0, 145, 255, 0.35);
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-softBg text-slate-800 antialiased selection:bg-brand-electric selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <!-- Logo Principal utilizando logo.png -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <img src="logo.png" alt="A&D Asesoría Integral" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='image_6be1bd.png';">
+                    <div class="hidden sm:block border-l border-slate-200 pl-3">
+                        <span class="block text-[10px] font-extrabold tracking-widest text-slate-400 uppercase">Estudio</span>
+                        <span class="block text-sm font-bold text-brand-navy tracking-tight">Contable & Tecnológico</span>
+                    </div>
+                </a>
+
+                <!-- Menú de Escritorio -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#inicio" class="hover:text-brand-electric transition">Inicio</a>
+                    <a href="#servicios-contables" class="hover:text-brand-electric transition">Servicios Contables</a>
+                    <a href="#servicios-tecnologicos" class="hover:text-brand-electric transition">Tecnología & Digitalización</a>
+                    <a href="#portal" class="hover:text-brand-electric transition">Portal Clientes</a>
+                    <a href="#nosotros" class="hover:text-brand-electric transition">Nosotros</a>
+                    <a href="#contacto" class="hover:text-brand-electric transition">Contacto</a>
+                </div>
+
+                <!-- Botón Directo al Portal -->
+                <div class="hidden md:flex items-center">
+                    <a href="#portal" class="bg-brand-electric hover:bg-blue-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md shadow-brand-electric/25 transition duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        Portal Clientes
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-electric text-2xl focus:outline-none p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-700 font-medium border-b border-slate-100">Inicio</a>
+            <a href="#servicios-contables" class="block py-2 text-slate-700 font-medium border-b border-slate-100">Servicios Contables</a>
+            <a href="#servicios-tecnologicos" class="block py-2 text-slate-700 font-medium border-b border-slate-100">Tecnología & Digitalización</a>
+            <a href="#portal" class="block py-2 text-brand-electric font-bold border-b border-slate-100">Portal Clientes</a>
+            <a href="#nosotros" class="block py-2 text-slate-700 font-medium border-b border-slate-100">Nosotros</a>
+            <a href="#contacto" class="block py-2 text-slate-700 font-medium">Contacto</a>
+            <a href="#portal" class="block w-full text-center bg-brand-electric text-white py-3 rounded-xl font-bold shadow-md">
+                Ingresar al Portal
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 bg-white">
+        <div class="absolute inset-0 bg-grid-subtle pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna Izquierda: Texto e Impacto -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-brand-electric text-xs font-bold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-electric animate-ping"></span>
+                        Asesoramiento Integral 100% Digital
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-navy tracking-tight leading-none">
+                        Contabilidad moderna respaldada por <span class="text-brand-electric">Tecnología.</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        En <strong class="text-brand-navy">A&D Asesoría Integral</strong> combinamos la sólida experiencia contable e impositiva con soluciones de automatización digital para potenciar la gestión de tu empresa.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#portal" class="bg-brand-electric hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-electric/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-folder-open text-lg"></i>
+                            Cargar Documentación
+                        </a>
+                        <a href="https://wa.me/5491100000000" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-brand-navy font-bold px-7 py-4 rounded-xl transition flex items-center justify-center gap-3 border border-slate-200">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i>
+                            Contactar Asesor
+                        </a>
+                    </div>
+
+                    <!-- Métricas -->
+                    <div class="pt-8 grid grid-cols-3 gap-6 border-t border-slate-100 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-navy">100%</p>
+                            <p class="text-xs text-slate-500 font-medium">Digital & En la nube</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-electric">24/7</p>
+                            <p class="text-xs text-slate-500 font-medium">Recepción activa</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-navy">Seguro</p>
+                            <p class="text-xs text-slate-500 font-medium">Acceso individual</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Interactiva y Banner -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="bg-gradient-to-tr from-brand-navy via-brand-navyLight to-brand-electric rounded-3xl p-1 shadow-2xl blue-glow">
+                            <div class="bg-brand-navy rounded-[22px] p-6 sm:p-8 text-white space-y-6">
+                                <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-brand-electric/20 flex items-center justify-center text-brand-electric">
+                                            <i class="fa-solid fa-user-check text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-sm">Portal Privado de Clientes</h3>
+                                            <p class="text-xs text-slate-400">Plataforma Cifrada</p>
+                                        </div>
+                                    </div>
+                                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="bg-slate-800/80 p-3.5 rounded-xl flex items-center justify-between text-xs">
+                                        <span class="text-slate-300"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i> Formulario 931</span>
+                                        <span class="text-emerald-400 font-mono font-bold">Cargado</span>
+                                    </div>
+                                    <div class="bg-slate-800/80 p-3.5 rounded-xl flex items-center justify-between text-xs">
+                                        <span class="text-slate-300"><i class="fa-solid fa-file-invoice-dollar text-brand-electric mr-2"></i> Facturación Vtas</span>
+                                        <span class="text-emerald-400 font-mono font-bold">Procesado</span>
+                                    </div>
+                                    <div class="bg-slate-800/80 p-3.5 rounded-xl flex items-center justify-between text-xs">
+                                        <span class="text-slate-300"><i class="fa-solid fa-building-columns text-amber-400 mr-2"></i> Extracto Bancario</span>
+                                        <span class="text-brand-electric font-mono font-bold">Pendiente</span>
+                                    </div>
+                                </div>
+
+                                <a href="#portal" class="block w-full text-center bg-brand-electric hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-md">
+                                    Acceder a mi espacio digital &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portal" class="py-16 bg-gradient-to-b from-blue-50/60 to-white border-y border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl border border-blue-100 overflow-hidden p-8 sm:p-12">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-100 text-brand-electric font-bold text-xs">
+                            <i class="fa-solid fa-lock"></i> Exclusivo para Clientes A&D
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">
+                            Portal para Carga de Documentación
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Acceda a nuestro entorno seguro impulsado por AppSheet y Google Cloud. Cada cliente cuenta con su usuario y contraseña para subir comprobantes, facturas y extractos organizados automáticamente por período y CUIT.
+                        </p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4 text-slate-700 text-sm pt-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-electric text-lg"></i>
+                                <span>Segregación privada de archivos.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-mobile-screen text-brand-electric text-lg"></i>
+                                <span>Accesible desde celular o PC.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-folder-tree text-brand-electric text-lg"></i>
+                                <span>Organización por mes y año.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-clock-rotate-left text-brand-electric text-lg"></i>
+                                <span>Historial permanente de envíos.</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <!-- Sustituir la URL por el Browser Link exacto de AppSheet -->
+                            <a href="https://www.appsheet.com" target="_blank" class="bg-brand-electric hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-electric/30 transition inline-flex items-center gap-3">
+                                <i class="fa-solid fa-right-to-bracket text-lg"></i>
+                                Ingresar al Portal A&D
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-brand-softBg p-8 rounded-2xl border border-slate-200 text-center space-y-4">
+                        <div class="w-16 h-16 mx-auto bg-brand-electric/10 text-brand-electric rounded-2xl flex items-center justify-center text-3xl">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-navy text-lg">¿Aún no posees usuario?</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Comunícate con nuestro equipo para activar las credenciales de tu empresa o CUIT y habilitar tu carpeta privada en la nube.
+                        </p>
+                        <a href="https://wa.me/5491100000000?text=Hola!%20Quisiera%20solicitar%20mi%20usuario%20para%20el%20Portal%20de%20Clientes%20A%26D" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-electric hover:underline">
+                            Solicitar acceso por WhatsApp &rarr;
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios-contables" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-electric">Área Contable e Impositiva</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brand-navy">Gestión Contable & Fiscal de Alto Nivel</h2>
+                <p class="text-slate-600">Tranquilidad y cumplimiento normativo absoluto para empresas, pymes y profesionales.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-brand-softBg p-8 rounded-2xl border border-slate-200 hover:border-brand-electric transition duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-electric group-hover:text-white transition">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Asesoramiento Impositivo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Liquidación de impuestos nacionales y provinciales (IVA, Ganancias, Ingresos Brutos, Convenio Multilateral).
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Monotributo y Responsables Inscriptos</li>
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Planificación fiscal preventiva</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-softBg p-8 rounded-2xl border border-slate-200 hover:border-brand-electric transition duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-electric group-hover:text-white transition">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Liquidación de Sueldos</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Administración integral de nóminas, cargas sociales (F.931), Libro de Sueldos Digital y convenios colectivos.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Altas/Bajas AFIP y Recibos Digitales</li>
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Asesoramiento laboral preventivo</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-softBg p-8 rounded-2xl border border-slate-200 hover:border-brand-electric transition duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-electric group-hover:text-white transition">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Balances & Sociedades</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Elaboración y auditoría de Estados Contables, rúbrica de libros y constitución de sociedades (SAS, SRL, SA).
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Certificaciones e informes contables</li>
+                        <li><i class="fa-solid fa-check text-brand-electric mr-1.5"></i> Inscripciones en IGJ / Registros</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios-tecnologicos" class="py-20 bg-brand-navy text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-electric">Transformación Digital</span>
+                <h2 class="text-3xl sm:text-4xl font-black">Soluciones Tecnológicas para tu Empresa</h2>
+                <p class="text-slate-300">Optimizamos los flujos de trabajo administrativos mediante la automatización No-Code y gestión en la nube.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Tech 1 -->
+                <div class="bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-brand-electric transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-brand-electric/20 text-brand-electric flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Apps a Medida (AppSheet)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Desarrollo de aplicaciones personalizadas sin código para la recepción de documentos, inventario y control operativo.
+                    </p>
+                </div>
+
+                <!-- Tech 2 -->
+                <div class="bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-brand-electric transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-brand-electric/20 text-brand-electric flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Digitalización en Google Cloud</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Estructuración automática de carpetas en Google Drive por CUIT y período para eliminar el papel físico en tu oficina.
+                    </p>
+                </div>
+
+                <!-- Tech 3 -->
+                <div class="bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-brand-electric transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-brand-electric/20 text-brand-electric flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automatización de Procesos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Integración de formularios inteligentes y alertas de vencimiento impositivo para evitar moras y cargos no deseados.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <span class="text-brand-electric font-bold text-xs uppercase tracking-widest">Sobre A&D Asesoría Integral</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">
+                        Innovación contable pensada para el profesional moderno
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Entendemos que el tiempo es el recurso más escaso en una empresa. Por eso, en **A&D Asesoría Integral** redefinimos la dinámica tradicional entre el estudio contable y el cliente.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Proporcionamos respuestas ágiles, precisión en cada liquidación y una plataforma tecnológica propia para que nos envíes tu información en segundos, sin desplazamientos ni archivos extraviados.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                        <div>
+                            <p class="font-bold text-brand-navy text-lg">Visión Digital</p>
+                            <p class="text-xs text-slate-500">Procesos 100% despapelizados y ordenados.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-navy text-lg">Compromiso</p>
+                            <p class="text-xs text-slate-500">Atención personalizada y acompañamiento directo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta con Logo Oficial -->
+                <div class="flex justify-center">
+                    <div class="bg-brand-softBg border border-slate-200 p-10 rounded-3xl text-center shadow-lg max-w-sm">
+                        <img src="logo.png" alt="A&D Logo" class="h-32 mx-auto mb-6 object-contain" onerror="this.onerror=null; this.src='image_6be1bd.png';">
+                        <h3 class="text-xl font-bold text-brand-navy">A&D Asesoría Integral</h3>
+                        <p class="text-xs font-semibold text-brand-electric mt-1">Estudio Contable & Tecnológico</p>
+                        <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                            Impulsando el crecimiento de empresas y emprendedores a través de herramientas contables e informáticas de vanguardia.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-brand-softBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-electric font-bold text-xs uppercase tracking-widest">Atención Personalizada</span>
+                        <h2 class="text-3xl font-extrabold text-brand-navy mt-2">Ponete en contacto</h2>
+                        <p class="text-slate-600 text-sm mt-3">
+                            Coordiná una reunión presencial o virtual con nuestros contadores y especialistas en tecnología.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-brand-navy">WhatsApp Directo</p>
+                                <p class="text-slate-600">+54 9 11 0000-0000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-brand-navy">Correo Electrónico</p>
+                                <p class="text-slate-600">contacto@asesoria-ad.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-brand-navy">Horarios de Atención</p>
+                                <p class="text-slate-600">Lunes a Viernes de 09:00 a 18:00 hs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias por enviar tu mensaje a A&D Asesoría Integral! Te responderemos a la brevedad.');">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre y Apellido *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-electric focus:outline-none text-sm bg-white" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">CUIT / Teléfono *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-electric focus:outline-none text-sm bg-white" placeholder="Ej. 20-30000000-9">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico *</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-electric focus:outline-none text-sm bg-white" placeholder="correo@empresa.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Servicio Requerido</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-electric focus:outline-none text-sm bg-white text-slate-700">
+                                <option>Asesoramiento Contable e Impositivo</option>
+                                <option>Soluciones Tecnológicas / App de Documentación</option>
+                                <option>Liquidación de Sueldos (F.931)</option>
+                                <option>Balance y Certificaciones</option>
+                                <option>Otro / Consulta General</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Consulta o Detalle</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-electric focus:outline-none text-sm bg-white" placeholder="Escribí tu consulta..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-electric hover:bg-blue-600 text-white font-bold py-4 rounded-xl shadow-md transition text-sm">
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-navy text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="A&D Logo" class="h-10 w-auto bg-white rounded-lg p-1" onerror="this.onerror=null; this.src='image_6be1bd.png';">
+                    <div>
+                        <p class="font-bold text-white text-sm">A&D Asesoría Integral</p>
+                        <p class="text-slate-400">Estudio Contable & Tecnológico</p>
+                    </div>
+                </div>
+                <div class="flex space-x-6 text-base">
+                    <a href="https://wa.me/5491100000000" target="_blank" class="hover:text-brand-electric transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-brand-electric transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-brand-electric transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center sm:text-left flex flex-col sm:flex-row justify-between text-slate-500">
+                <p>&copy; 2026 A&D Asesoría Integral. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Diseño limpio, minimalista y responsivo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5491100000000?text=Hola!%20Quisiera%20más%20información%20sobre%20sus%20servicios%20contables%20y%20tecnológicos" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
